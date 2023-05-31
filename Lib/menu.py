@@ -1,5 +1,6 @@
 import sys
-from diarybook import DiaryBook, Diary
+
+from diarybook import DiaryBook
 from utils import read_from_json_into_application
 
 class Menu:
@@ -12,8 +13,7 @@ class Menu:
              "1": self.show_all_diaries,
              "2": self.add_diary,
              "3": self.search_diaries,
-             "4": self.populate_database,
-             "5": self.quit
+             "4": self.quit
          }
 
     def show_all_diaries(self):
@@ -57,16 +57,16 @@ class Menu:
            1. Show  diaries
            2. Add Diary
            3. filter using keyword
-           4. Populate database
-           5. Quit program
+           4. Quit program
         """)
 
     def run(self):
-         while True:
+        # self.populate_database()
+        while True:
              self.display_menu()
              choice = input("enter an option: ")
              action = self.choices.get(choice)
-             if action :
+             if action:
                  action()
              else:
                  print("{0} is not a valid choice".format(choice))

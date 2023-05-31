@@ -19,7 +19,7 @@ class DiaryBook:
      self.diaries.append(Diary(memo,tags))
 
     def search_diary(self, keyword):
-         filter_diaries = []
+         filtered_diaries = []
          for diary in  self.diaries:
              if diary. match(keyword):
                  filtered_diaries.append(diary)
